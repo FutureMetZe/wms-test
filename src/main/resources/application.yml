@@ -3,12 +3,10 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://119.29.138.236:3306/wms2?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://localhost/wms2?useUnicode=true&characterEncoding=UTF-8
     username: root
-    password: Future@2018
-#    url: jdbc:mysql://132.126.3.236:3306/wms?useUnicode=true&characterEncoding=UTF-8
-#    username: ehome
-#    password: ehome
+    password: 123456
+
 
 mybatis-plus:
   mapper-locations: classpath*:mybatis/*.xml
