@@ -69,8 +69,8 @@ public class CodeGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setModuleName(scanner("模块名"));
-        pc.setParent("com.eshore.wms");
+        pc.setModuleName(scanner("模块名（本项目为wms）"));
+        pc.setParent("com.eshore");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
