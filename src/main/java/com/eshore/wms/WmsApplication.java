@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author lizj
  */
-@MapperScan("com.eshore.wms.mapper")
+@MapperScan("com.eshore.wms.sys.mapper")
 @SpringBootApplication
 public class WmsApplication {
 

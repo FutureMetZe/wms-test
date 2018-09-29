@@ -20,6 +20,13 @@ import java.util.Scanner;
  */
 public class CodeGenerator {
 
+    private static String dirver ="com.mysql.jdbc.Driver";
+    private static String url="jdbc:mysql://119.29.138.236:3306/wms2?useUnicode=true&characterEncoding=UTF-8&useSSL=false";
+    private static String root="root";
+    private static String password="Future@2018";
+    private static String author = "lizj";
+
+
     /**
      * <p>
      * 读取控制台内容
@@ -47,23 +54,23 @@ public class CodeGenerator {
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
         gc.setOutputDir(projectPath + "/src/main/java");
-        gc.setAuthor("jobob");
+        gc.setAuthor(author);
         gc.setOpen(false);
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/wms?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl(url);
         // dsc.setSchemaName("public");
-        dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("root");
-        dsc.setPassword("123456");
+        dsc.setDriverName(dirver);
+        dsc.setUsername(root);
+        dsc.setPassword(password);
         mpg.setDataSource(dsc);
 
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setModuleName(scanner("模块名"));
-        pc.setParent("com.baomidou.ant");
+        pc.setParent("com.eshore.wms");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
@@ -90,12 +97,12 @@ public class CodeGenerator {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass("com.baomidou.ant.common.BaseEntity");
-        strategy.setEntityLombokModel(true);
-        strategy.setRestControllerStyle(true);
-        strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
+//        strategy.setSuperEntityClass("com.baomidou.ant.common.BaseEntity");
+//        strategy.setEntityLombokModel(true);  //开启lombok
+//        strategy.setRestControllerStyle(true);
+//        strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
         strategy.setInclude(scanner("表名"));
-        strategy.setSuperEntityColumns("id");
+//        strategy.setSuperEntityColumns("id");
         strategy.setControllerMappingHyphenStyle(true);
         strategy.setTablePrefix(pc.getModuleName() + "_");
         mpg.setStrategy(strategy);
