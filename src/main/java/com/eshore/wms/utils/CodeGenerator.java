@@ -21,7 +21,7 @@ import java.util.Scanner;
 public class CodeGenerator {
 
     private static String dirver ="com.mysql.jdbc.Driver";
-    private static String url="jdbc:mysql://119.29.138.236:3306/wms2?useUnicode=true&characterEncoding=UTF-8&useSSL=false";
+    private static String url="jdbc:mysql://localhost:3306/wms2?useUnicode=true&characterEncoding=UTF-8&useSSL=false";
     private static String root="root";
     private static String password="Future@2018";
     private static String author = "lizj";
